@@ -29,9 +29,34 @@ int main() {
   int n, m, x, y;
   cin >> n >> m >> x >> y;
 
-  priority_queue<int[4]> next;
-  
 
+  unordered_map<int, vector<tuple<int, int, int>>> adj;
+  auto cmp = []{tuple<int, int, int> l, tuple<int, int, int> r} { 
+    return (l[0] != r[0] ? (l[0] < r[0]) : (l[1] != r[1] ? (l[1] < r[1]) : (l[2] > r[2]? false : true)));
+    };
+  priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, decltype(cmp)> que;
+  
+  int a, b, c, d;
+  f0r(i, m) {
+    cin >> a >> b >> c >> d;
+    adj[a].push_back({c, d, b});
+    adj[b].push_back({c, d, a});
+  }
+
+
+  vector<tuple<int, int, int>> distance(n, {INT_MAX, INT_MAX, INT_MAX});
+  vector<bool> visited(n, false);
+
+  while(!que.empty) {
+    int a = que.top()[2]; que.pop;
+
+    if (visited[a]) continue;
+    vistied[a] = true;
+
+    for(auto u : adj[a]) {
+      int l = u[2], r = [];
+    }
+  }
 
   return 0;
 }
