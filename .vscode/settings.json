@@ -24,7 +24,9 @@
     "vector": "cpp",
     "any": "cpp",
     "ranges": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "tuple": "cpp",
+    "variant": "cpp"
   },
   "cmake.configureOnOpen": true
 }
